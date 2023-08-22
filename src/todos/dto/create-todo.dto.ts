@@ -19,4 +19,9 @@ export class CreateTodoDto {
 
   @ApiProperty({ required: false, default: 'PENDING' })
   status: 'PENDING' | 'IN PROGRESS' | 'DONE';
+
+  @ApiProperty({ required: false, default: true })
+  published: boolean;
+
+  userId: string;
 }
