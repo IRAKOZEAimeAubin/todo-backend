@@ -11,11 +11,11 @@ export class TodosService {
     const randomNum = Math.floor(Math.random() * 1000);
     const randomString = randomNum.toString().padStart(3, '0');
     const newId = `TD${randomString}`;
-    const existingLoanType = await this.prisma.todo.findUnique({
+    const existingTodoType = await this.prisma.todo.findUnique({
       where: { todoId: newId },
     });
 
-    if (existingLoanType) {
+    if (existingTodoType) {
       return this.generateNewId();
     }
 
