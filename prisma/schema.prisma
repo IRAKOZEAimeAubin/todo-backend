@@ -21,14 +21,14 @@ model User {
 }
 
 model Todo {
-  todoId      String   @id
+  todoId      String        @id
   title       String
   description String?
-  tags        String[]
-  status      String   @default("PENDING")
+  status      String        @default("PENDING")
   published   Boolean?
-  user        User?    @relation(fields: [userId], references: [id])
-  userId      String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdBy   User?         @relation(fields: [creatorId], references: [id])
+  creatorId   String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
 }
+

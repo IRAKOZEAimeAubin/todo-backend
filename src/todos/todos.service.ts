@@ -33,11 +33,7 @@ export class TodosService {
   }
 
   findAll() {
-    return this.prisma.todo.findMany({
-      include: {
-        user: true,
-      },
-    });
+    return this.prisma.todo.findMany();
   }
 
   findOne(id: string) {

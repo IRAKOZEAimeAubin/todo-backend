@@ -35,7 +35,7 @@ export class TodosController {
   @ApiCreatedResponse({ type: TodoEntity })
   create(@Body() createTodoDto: CreateTodoDto, @Request() request) {
     const authenticatedUser = request.user;
-    createTodoDto.userId = authenticatedUser.id;
+    createTodoDto.creatorId = authenticatedUser.id;
     return this.todosService.create(createTodoDto);
   }
 

@@ -11,13 +11,11 @@ export class TodoEntity implements Todo {
   @ApiProperty()
   description: string;
   @ApiProperty()
-  tags: string[];
-  @ApiProperty()
   status: string;
   @ApiProperty()
   published: boolean;
   @ApiProperty()
-  userId: string;
+  creatorId: string;
   @ApiProperty()
   createdAt: Date;
   @ApiProperty()
