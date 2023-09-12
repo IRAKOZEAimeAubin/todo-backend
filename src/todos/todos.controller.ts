@@ -47,6 +47,14 @@ export class TodosController {
     return this.todosService.findAll();
   }
 
+  @Get('published')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
+  @ApiOkResponse({ type: TodoEntity, isArray: true })
+  findAllPublished() {
+    return this.todosService.findAllPublished();
+  }
+
   @Get(':id')
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()

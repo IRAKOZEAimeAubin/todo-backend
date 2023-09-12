@@ -36,6 +36,14 @@ export class TodosService {
     return this.prisma.todo.findMany();
   }
 
+  findAllPublished() {
+    return this.prisma.todo.findMany({
+      where: {
+        published: true,
+      },
+    });
+  }
+
   findOne(id: string) {
     return this.prisma.todo.findUnique({
       where: { todoId: id },
